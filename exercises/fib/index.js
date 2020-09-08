@@ -8,6 +8,90 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+
+/* solution 4 */
+
+function memoize(fn){
+    const cache={};
+    return function(...args){
+        if(cache[args]){
+            return cache[args]
+        }
+
+        const result = fn.apply(this,args);
+        cache[args] = result;
+
+        return result
+    }
+}
+function slowFib(n){
+     if(n<2){
+        return n;
+    }
+    // n=4 return fib(3)+fib(2)
+    // n=3 return fib(2) + fib(1)
+    return  fib(n-1) + fib(n-2);
+
+}
+
+const fib = memoize(slowFib)
+
+console.log(fib(4))
 
 module.exports = fib;
+
+/* solution 3 */
+/* O(2^n) */
+// function fib(n) {
+//     // n=4, i=4
+//     if(n<2){
+//         return n;
+//     }
+//     // n=4 return fib(3)+fib(2)
+//     // n=3 return fib(2) + fib(1)
+//     return  fib(n-1) + fib(n-2);
+
+
+// }
+
+
+/* solution 2 */
+/* O(n) */
+// function fib(n) {
+//     const result = [0, 1];
+//     for (let i = 2; i <= n; i++) {
+//         const a = result[i - 1];
+//         const b = result[i - 2]
+//         result.push(a + b)
+//     }
+
+//     return result[n]
+
+
+// }
+
+/* solution 1 */
+// function fib(n) {
+//     let numPrev2 = 0;
+//     let numPrev1 = 1;
+//     let result = 0;
+//     if(n === 0){
+//         result = numPrev2;
+//     }else if(n === 1){
+//         result = numPrev1;
+//     }else{
+//         for (let i = 2; i<=n;i++){
+//             result = numPrev2 + numPrev1;
+//             numPrev2 = numPrev1;
+//             numPrev1 = result;
+
+//         }
+
+//     }
+  
+//     return result
+ 
+
+// }
+
+

@@ -8,6 +8,21 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+    constructor(){
+        this.data =[];
+    }
+
+    add(record){
+        this.data.unshift(record);
+    }
+
+    // The pop() method removes the last element from an array and returns that element
+    remove(){
+        return this.data.pop()
+    }
+
+
+}
 
 module.exports = Queue;
