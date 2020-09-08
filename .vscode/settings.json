@@ -1,17 +1,29 @@
 {
     "cSpell.ignoreWords": [
         "char",
+        "col",
+        "console",
         "const",
         "current",
         "debugger",
+        "each",
+        "else",
+        "for",
         "function",
+        "i",
+        "if",
+        "let",
+        "log",
+        "n",
         "new",
         "reduce",
         "return",
         "reverse",
         "reversed",
+        "row",
         "solution",
         "split",
+        "step",
         "str"
     ]
 }
