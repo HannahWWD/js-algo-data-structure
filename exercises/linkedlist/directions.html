@@ -22,7 +22,7 @@
     <tbody>
       <tr>
         <td>Node.constructor</td>
-        <td>(Data, Node)</td>
+        <td>(Data, NextNode)</td>
         <td>Node</td>
         <td>
           Creates a class instance to represent a node.  The node should
@@ -34,11 +34,11 @@
         </td>
         <td>
           <pre>
-            const n = new Node('There');
-            n.data // 'Hi'
-            n.next // null
-            const n2 = new Node('Hi', n);
-            n.next // returns n
+            const n1 = new Node('There');
+            n1.data // 'Hi'
+            n1.next // null
+            const n2 = new Node('Hi', n1);
+            n2.next // returns n1
           </pre>
         </td>
       </tr>
@@ -120,7 +120,7 @@
             const list = new LinkedList();
             list.insertFirst('a');
             list.insertFirst('b');
-            list.getFirst(); // returns Node instance with data 'a'
+            list.getFirst(); // returns Node instance with data 'b'
           </pre>
         </td>
       </tr>

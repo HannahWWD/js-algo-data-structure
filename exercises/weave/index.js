@@ -24,6 +24,7 @@
 
 const Queue = require('./queue');
 
+/* solution 2 */
 function weave(sourceOne, sourceTwo) {
     const combineQueue = new Queue();
     while(sourceOne.peek() || sourceTwo.peek()){
@@ -43,6 +44,8 @@ function weave(sourceOne, sourceTwo) {
 
 
 module.exports = weave;
+
+/* solution 1 */
 
 // function weave(sourceOne, sourceTwo) {
 //     const combineQueue = new Queue();
