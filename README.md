@@ -35,3 +35,12 @@ coding-interview-bootcamp-algorithms-and-data-structure/)
 - stack
 - qfroms
 
+## LinkedList
+- linkedlist
+- midpoint (slow fast)
+- circular(slow fast)
+
+## tree
+- tree (traversal bf - add children to end of arr, traversal df - add children to the beginning of arr)
+- level width (traversal bf, 1 counter arr, 1 shuffle arr)
+- bst (recursion, don't use traversal)
