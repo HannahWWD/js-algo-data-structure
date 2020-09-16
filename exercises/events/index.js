@@ -4,16 +4,37 @@
 // have methods 'on', 'trigger', and 'off'.
 
 class Events {
+
+  constructor(){
+    this.event = {}
+  }
   // Register an event handler
-  on(eventName, callback) {}
+  on(eventName, callback) {
+    if(this.event[eventName]){
+      this.event[eventName].push(callback);
+    }else{
+      this.event[eventName] = [callback]
+    }
+  }
 
   // Trigger all callbacks associated
   // with a given eventName
-  trigger(eventName) {}
+  trigger(eventName) {
+    if(this.event[eventName]){
+      for(let callback of this.event[eventName]){
+        callback()
+      }
+    }
+  }
 
   // Remove all event handlers associated
   // with the given eventName
-  off(eventName) {}
+  off(eventName) {
+    if(this.event[eventName]){
+      delete this.event[eventName];
+    }
+
+  }
 }
 
 module.exports = Events;

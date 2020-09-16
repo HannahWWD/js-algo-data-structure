@@ -5,6 +5,27 @@
 // every node's right hand child is greater than
 // the parent
 
-function validate(node, min = null, max = null) {}
+// very challenging one, see https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/learn/lecture/8547264#questions
+// for step to step explanation
+function validate(node, min = null, max = null) {
+    if(max !== null && node.data > max){
+        return false;
+    }
+
+    if(min !== null && node.data < min){
+        return false;
+    }
+
+    if(node.left && !validate(node.left,min,node.data)){
+        return false
+    }
+
+    if(node.right && !validate(node.right,node.data,max)){
+        return false
+    }
+
+    return true;
+
+}
 
 module.exports = validate;
