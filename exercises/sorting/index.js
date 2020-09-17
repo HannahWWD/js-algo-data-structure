@@ -45,11 +45,36 @@ function selectionSort(arr) {
 }
 
 function mergeSort(arr) {
+    // try walk through these codes with an array like [97,0]
+    if(arr.length === 1){
+        return arr;
+    }
+
+    // get midpoint
+    const center = Math.floor(arr.length / 2);
+    // split arr
+    const left = arr.slice(0,center);
+    const right = arr.slice(center);
+
+    return merge(mergeSort(left),mergeSort(right))
+
+
+
 
 }
 
 function merge(left, right) {
+    const result = [];
+    while(left.length && right.length){
+        if(left[0] < right[0]){
+            result.push(left.shift());
+        }else{
+            result.push(right.shift())
+        }
+    }
+    // result.push(...[...left,...right])
 
+    return [...result,...left,...right];
 }
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
